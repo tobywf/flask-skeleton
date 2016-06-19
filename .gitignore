@@ -1,0 +1,8 @@
+.DS_Store
+*.pyc
+__pycache__/
+build/
+dist/
+env/
+*.egg-info/
+.vagrant/

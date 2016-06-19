@@ -1,0 +1,15 @@
+{% set title = "Login" %}
+{% extends "layout.html" %}
+{% block body %}
+  <div>
+    {{ wtform_errors(form) }}
+    <form action="" method="post">
+      {{ form.csrf_token }}
+      <ol>
+        <li>{{ form.email.label }} {{ form.email() }}</li>
+        <li>{{ form.password.label }} {{ form.password() }}</li>
+      </ol>
+      <input type="submit" value="login" name="action" />
+    </form>
+  </div>
+{% endblock %}

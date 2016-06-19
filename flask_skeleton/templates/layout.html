@@ -1,0 +1,34 @@
+{% macro wtform_errors(form) %}
+  {% if form.errors %}
+    <ul class="errors">
+    {% for field_name, field_errors in form.errors|dictsort if field_errors %}
+    {% for error in field_errors %}
+      <li>{{ form[field_name].label }}: {{ error }}</li>
+    {% endfor %}
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{ title }}</title>
+</head>
+<body>
+<div>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <div>
+    <ul class="flashes">
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+{% endwith %}
+{% block body %}{% endblock %}
+</div>
+</body>
+</html>

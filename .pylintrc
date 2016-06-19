@@ -1,0 +1,16 @@
+[MESSAGES CONTROL]
+
+# Messages to disable
+disable=locally-disabled,missing-docstring
+
+[BASIC]
+
+# Good variable names which should always be accepted, separated by a comma
+good-names=e,f,i,j,db,dn,ex,fp,_
+
+[TYPECHECK]
+
+# List of classes names for which member attributes should not be checked
+# (useful for classes with attributes dynamically set).
+ignored-classes=SQLObject,scoped_session,Enumeration
+generated-members=query
